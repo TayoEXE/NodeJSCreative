@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 router.get('/name', function(req, res) {
   var name = randomName.random();
   console.log(name);
-  names.push(name);
+  names.unshift(name);
   res.send(names);
 });
 

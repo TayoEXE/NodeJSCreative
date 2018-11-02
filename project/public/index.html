@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="javascripts/app.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
@@ -11,16 +12,18 @@
 
 <body>
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
-    <hi>Random Game Name Generator</hi>
+    <h1>Random Game Name Generator</h1><br>
+    <h3>Are you creating a game? Can't think of a name?</h3><br>
 
     <form id="newName" ng-submit="getName()">
       Tap the button to get a new game name!
       <input type="submit" value="Submit">
+      I hope someone creates cover art for these.
     </form>
 
     <ul ng-if='names.length' class='list center stretch'>
       <li ng-repeat='name in names' class='randName'>
-        <h1>{{name}}</h1>
+        <h2>{{name}}</h2>
       </li>
     </ul>
 

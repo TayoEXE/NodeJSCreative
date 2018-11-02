@@ -8,6 +8,7 @@ function nameFetcher($http) {
   var API_ROOT = 'name'
   return {
     get: function() {
+      console.log("Entered nameFetcher");
       return $http
         .get(API_ROOT)
         .then(function(resp) {
@@ -16,10 +17,15 @@ function nameFetcher($http) {
     }
   }
 
-}
+};
 
 function mainCtrl($scope, nameFetcher, $http) {
   $scope.names = [];
+  
+  nameFetcher.get()
+      .then(function(data) {
+        $scope.names = data;
+      });
 
   $scope.getName = function() {
     console.log("Entered getName");
@@ -29,4 +35,4 @@ function mainCtrl($scope, nameFetcher, $http) {
       });
   }
 
-}
+};
